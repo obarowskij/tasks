@@ -1,0 +1,8 @@
+django
+djangorestframework
+drf_spectacular
+django-filter
+django-simple-history
+psycopg2
+gunicorn
+pytest
