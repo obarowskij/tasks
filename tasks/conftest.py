@@ -8,16 +8,18 @@ from rest_framework.test import APIClient
 
 django.setup()
 
+
 @pytest.fixture
 def create_task():
     def make_task(**kwargs):
         return Task.objects.create(**kwargs)
+
     return make_task
 
 
 @pytest.fixture
 def authenticated_client():
-    user = User.objects.create_user(username='testuser', password='12345')
+    user = User.objects.create_user(username="testuser", password="12345")
     client = APIClient()
     client.force_authenticate(user=user)
     return client
