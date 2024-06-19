@@ -9,11 +9,19 @@ source venv/bin/activate
 ```bash
 pip install -r requirements
 ```
-### 3. Run the database service
+### 3. Create environment variables
+Create .env file in a project directory with following content:
+```bash
+DB_HOST=localhost
+DB_NAME=devdb
+DB_USER=devuser
+DB_PASSWORD=your_password
+```
+### 4. Run the database service
 ```bash
 sudo docker-compose up
 ```
-### 4. Start the application
+### 5. Start the application
 ```bash
 gunicorn tasks.wsgi --bind 0.0.0.0:8000
 ```
